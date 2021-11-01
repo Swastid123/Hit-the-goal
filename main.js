@@ -1,7 +1,7 @@
 
 
 
-var canvas = new fabric.Canvas('myCanvas');
+var canvas = new fabric.Canvas("myCanvas");
 ball_y=0;
 ball_x=0;
 hole_y=400;
@@ -29,7 +29,7 @@ function load_img()
 
 function new_image()
 {
-	fabric.Image.fromURL("ball.png", function(img) {
+	fabric.Image.fromURL("ball.png", function(Img) {
 		ball_obj = Img;
 		ball_obj.scaleToWidth(50);
 		ball_obj.scaleToHeight(50);
@@ -80,9 +80,9 @@ function my_keydown(e)
 	
 	function up()
 	{
-		if(ball_y <=225)
+		if(ball_y >=5)
 		{
-			ball_y = ball_y - block_imnage_height;
+			ball_y = ball_y - block_image_height;
 			console.log("block image height = " - block_image_height);
 			console.log("When Up arrow key is pressed, X = " + ball_x + " , Y = "+ball_y);
 			canvas.remove(ball_obj);
@@ -95,7 +95,7 @@ function my_keydown(e)
 	{
 		if(ball_y <=450)
 		{
-			ball_y = ball_y + block_imnage_height;
+			ball_y = ball_y + block_image_height;
 			console.log("block image height = " + block_image_height);
 			console.log("When Down arrow key is pressed, X = " + ball_x + " , Y = "+ball_y);
 			canvas.remove(ball_obj);
@@ -107,7 +107,7 @@ function my_keydown(e)
 	{
 		if(ball_x >5)
 		{
-			ball_y = ball_y - block_imnage_height;
+			ball_x = ball_x - block_image_height;
 			console.log("block image height = " - block_image_height);
 			console.log("When Left arrow key is pressed, X = " + ball_x + " , Y = "+ball_y);
 			canvas.remove(ball_obj);
@@ -119,7 +119,7 @@ function my_keydown(e)
 	{
 		if(ball_x <=1050)
 		{
-			ball_y = ball_y + block_imnage_height;
+			ball_x = ball_x + block_image_height;
 			console.log("block image height = " + block_image_height);
 			console.log("When Right arrow key is pressed, X = " + ball_x + " , Y = "+ball_y);
 			canvas.remove(ball_obj);
